@@ -1,0 +1,37 @@
+$primary-color: #6B46C1;
+$label-color: #4A5568;
+$light-gray: #F7FAFC;
+
+.login-container {
+  background-color:#ada4c3  !important;
+}
+
+.login-card {
+  max-width: 620px;
+  width: 100%;
+  border-radius: 8px;
+
+  .card-title {
+    color: $primary-color;
+  }
+
+  .form-label {
+    color: $label-color;
+  }
+
+  .form-control:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+  }
+
+  .btn {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  
+}

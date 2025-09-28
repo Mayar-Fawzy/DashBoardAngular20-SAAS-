@@ -1,3 +1,70 @@
-<div class="h1">
-    DashBoard   
+<div class="sidebar" [ngClass]="{'collapsed': isCollapsed}">
+  <div class="sidebar-header">
+    <h5 class="dash pt-3">Dashboard</h5>
+    <button class="btn btn-toggle" (click)="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+  <div class="sidebar-content">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span class="link-text">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span class="link-text">Analytics</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-file-invoice"></i>
+          <span class="link-text">Invoice</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span class="link-text">Schedule</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-calendar"></i>
+          <span class="link-text">Calendar</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="link-text">Messages <span class="badge bg-danger">49</span></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-bell"></i>
+          <span class="link-text">Notification</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-gear"></i>
+          <span class="link-text">Settings</span>
+        </a>
+      </li>
+    </ul>
+    <div class="user-section text-center">
+      <a href="#" class="nav-link">
+        <img src="/Images/7f92d85e-fdcd-4501-a6c6-3be51d2a8583.jpg" alt="User" class="rounded-circle">
+        <span class="link-text">Mayar Mohsen<br><small>Free Account</small></span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="content">
+   
+  <router-outlet></router-outlet>
 </div>

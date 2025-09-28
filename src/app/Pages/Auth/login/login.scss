@@ -28,9 +28,6 @@ $light-gray: #F7FAFC;
     background-color: $primary-color;
     color: white;
 
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
   }
 
   

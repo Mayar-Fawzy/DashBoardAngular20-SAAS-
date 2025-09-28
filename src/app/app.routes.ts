@@ -21,7 +21,7 @@ export const routes: Routes = [
       {
          path: 'dashboardcomp',
         loadComponent: () =>
-          import('./Pages/DashBoard/dash-board/dash-board').then(m => m.DashBoard)
+          import('./Pages/DashBoard/dashboardcomp/dashboardcomp').then(m => m.Dashboardcomp)
       }
       ,
       {

@@ -8,7 +8,7 @@ import { IloginReseltRoot } from '../Core/Interface/ilogin';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, CommonModule, RouterLink],
+  imports: [ReactiveFormsModule,RouterLink, CommonModule],
 
   templateUrl: './login.html',
   styleUrl: './login.scss'

@@ -15,6 +15,8 @@ import { IloginReseltRoot } from '../Core/Interface/ilogin';
 })
 
 export class LoginComponent {
+// Email : mayar2878@gmail.com
+// Password: 12121212
   private fb = inject(FormBuilder);
   private router = inject(Router);
   private loginService = inject(LoginService);

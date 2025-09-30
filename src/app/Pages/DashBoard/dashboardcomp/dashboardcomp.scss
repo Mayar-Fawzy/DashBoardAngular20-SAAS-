@@ -1,0 +1,56 @@
+h3 {
+  color: #6B46C1;
+  margin-bottom: 20px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; /* Allows cards to wrap if the screen is too small */
+}
+
+.sales-products {
+  width: 276px;
+  height: 116px;
+  border-radius: 20px;
+  color: white !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
+  background-color: #FFFFFF; /* Default background, override with item.color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.icons i {
+  color: white;
+  font-size: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.card span {
+  font-size: 24px;
+  color: #1D3557;
+  font-weight: bold;
+}
+
+.card p {
+  color: #457B9D;
+  margin: 0;
+}

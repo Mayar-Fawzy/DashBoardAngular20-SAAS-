@@ -1,1 +1,16 @@
-<p>dashboardcomp works!</p>
+<h3>Dashboard</h3>
+<div class="cards-container">
+  @for (item of navItems; track $index) {
+    <div class="sales-products d-flex align-items-center justify-content-center">
+      <div class="icons" [style.background-color]="item.color">
+        <div class="">
+          <i [class]="item.icon"></i>
+        </div>
+      </div>
+      <div class="card">
+        <span>{{item.count}}</span>
+        <p>{{ item.title }}</p>
+      </div>
+    </div>
+  }
+</div>

@@ -1,17 +1,140 @@
 import { Component } from '@angular/core';
-import { count } from 'node:console';
+import { EChartsOption } from 'echarts';
+import { NgxEchartsModule } from 'ngx-echarts';
 
+import * as echarts from 'echarts/core';
 @Component({
   selector: 'app-dashboardcomp',
-  imports: [],
+  standalone: true,
+  imports: [NgxEchartsModule],
   templateUrl: './dashboardcomp.html',
-  styleUrl: './dashboardcomp.scss'
+  styleUrls: ['./dashboardcomp.scss']
 })
-export class Dashboardcomp {
-navItems: any[] = [
-   { title: 'save Products', icon: 'fa-solid fa-heart' ,count:'178+', color: '#3B82F6' },
-   { title: 'Stack Products', count:'20+',icon: 'fa-solid fa-gamepad', color: '#F59E0B' },
-   { title: 'Sale Products',count:'190+', icon: 'fa-solid fa-bag-shopping', color: '#EF4444'},
-    { title: 'jop Application',count:'12+', icon: 'fa-solid fa-briefcase', color: '#605BFF' }
+export class DashboardcompComponent {
+  navItems: any[] = [
+    { title: 'save Products', icon: 'fa-solid fa-heart', count: '178+', color: '#60A5FA' },
+    { title: 'Stack Products', count: '20+', icon: 'fa-solid fa-cube', color: '#FBBF24' },
+    { title: 'Sale Products', count: '190+', icon: 'fa-solid fa-bag-shopping', color: '#F87171' },
+    { title: 'jop Application', count: '12+', icon: 'fa-solid fa-briefcase', color: '#818CF8' }
   ];
+
+  lineChartOption: EChartsOption = {
+    xAxis: {
+      type: 'category',
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      axisLabel: {
+        color: '#A0AEC0',
+        fontSize: 12
+      },
+      axisLine: { show: false },
+      axisTick: { show: false }
+    },
+    yAxis: {
+      type: 'value',
+      max: 100,
+      axisLabel: {
+        color: '#A0AEC0',
+        fontSize: 12
+      },
+      axisLine: { show: false },
+      splitLine: {
+        lineStyle: {
+          color: '#E2E8F0',
+          type: 'dashed'
+        }
+      }
+    },
+    series: [
+      {
+        data: [20, 40, 30, 60, 80, 50, 70],
+        type: 'line',
+        smooth: true,
+        symbol: 'none',
+        itemStyle: {
+          color: '#4C51BF'
+        },
+        areaStyle: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: 'rgba(76, 81, 191, 0.4)' },
+            { offset: 1, color: 'rgba(76, 81, 191, 0)' }
+          ])
+        },
+        markPoint: {
+          data: [
+            {
+              name: 'Peak',
+              value: 80,
+              xAxis: 4,
+              yAxis: 80,
+              label: {
+                color: '#FFFFFF',
+                backgroundColor: '#2D3748',
+                padding: [4, 8],
+                borderRadius: 4,
+                fontSize: 12,
+                formatter: '2,879'
+              }
+            }
+          ]
+        }
+      }
+    ],
+    grid: {
+      left: '5%',
+      right: '5%',
+      bottom: '10%',
+      top: '10%',
+      containLabel: true
+    },
+    tooltip: { trigger: 'axis' },
+    backgroundColor: 'transparent'
+  };
+
+  doughnutChartOption: EChartsOption = {
+    series: [
+      {
+        name: 'Analytics',
+        type: 'pie',
+        radius: ['70%', '90%'],
+        avoidLabelOverlap: false,
+        label: {
+          show: false,
+          position: 'center'
+        },
+        emphasis: {
+          label: {
+            show: true,
+            formatter: '{d}%',
+            fontSize: 24,
+            fontWeight: 'bold',
+            color: '#2D3748'
+          }
+        },
+        labelLine: { show: false },
+        data: [
+          { value: 85, name: 'Sale', itemStyle: { color: '#60A5FA' } }, // Blue, dominant segment
+          { value: 10, name: 'Distribute', itemStyle: { color: '#FBBF24' } }, // Yellow
+          { value: 5, name: 'Return', itemStyle: { color: '#F87171' } } // Orange
+        ]
+      }
+    ],
+    legend: {
+      orient: 'horizontal',
+      left: 'center',
+      top: '95%', // Position just below the chart
+      itemGap: 12, // Adjusted for spacing
+      itemWidth: 10,
+      itemHeight: 10,
+      textStyle: {
+        color: '#4A5568', // Darker text to match image
+        fontSize: 12
+      },
+      data: [
+        { name: 'Sale', icon: 'circle' },
+        { name: 'Distribute', icon: 'circle' },
+        { name: 'Return', icon: 'circle' }
+      ]
+    },
+    backgroundColor: 'transparent'
+  };
 }

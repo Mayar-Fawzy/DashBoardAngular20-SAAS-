@@ -30,8 +30,8 @@
   </div>
   <div class="TOPselling col-4">
     <h3>Top Selling Products</h3>
-    <div class="d-flex">
-      <div class="imgg" style="height: 104px;">
+    <div class="d-flex my-4">
+      <div class="imgg" style="height: 104px">
         <img src="/Images/Mask Group.png" alt="" />
       </div>
       <div class="Textss pt-2 mx-3">
@@ -46,21 +46,19 @@
         >
           NIKE Shoes Black Pattern
         </span>
-    <div class="stars my-0">
-  @for (star of stars; track star; let i = $index) {
-    <span class="star"
-          [class.inactive]="star > rating()"
-          (click)="setRating(star)">
-      &#9733;
-    </span>
-  }
-</div>
+        <div class="stars my-0">
+          @for (star of stars; track star; let i = $index) {
+          <span class="star" [class.inactive]="star > rating()" (click)="setRating(star)">
+            &#9733;
+          </span>
+          }
+        </div>
 
         <p class="fw-bold">$87</p>
       </div>
     </div>
-    <div class="d-flex">
-      <div  style="height: 104px;">
+    <div class="d-flex my-2">
+      <div style="height: 104px">
         <img class="imggiphone" src="/Images/iphone 12.png" alt="" />
       </div>
       <div class="Textss pt-2 mx-3">
@@ -75,15 +73,13 @@
         >
           iphone 12
         </span>
-    <div class="stars my-0">
-  @for (star of stars1; track star; let i = $index) {
-    <span class="star"
-          [class.inactive]="star > rating1()"
-          (click)="setRating1(star)">
-      &#9733;
-    </span>
-  }
-</div>
+        <div class="stars my-0">
+          @for (star of stars1; track star; let i = $index) {
+          <span class="star" [class.inactive]="star > rating1()" (click)="setRating1(star)">
+            &#9733;
+          </span>
+          }
+        </div>
 
         <p class="fw-bold">$987</p>
       </div>

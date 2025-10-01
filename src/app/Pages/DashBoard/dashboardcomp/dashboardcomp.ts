@@ -1,12 +1,20 @@
 import { Component, signal } from '@angular/core';
 import { EChartsOption } from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
-
+import { TableModule } from 'primeng/table';
 import * as echarts from 'echarts/core';
+import { CommonModule } from '@angular/common';
+ interface OrderItem {
+  trackingNo: string;
+  productName: string;
+  price: number;
+  totalOrder: number;
+  totalAmount: number;
+}
 @Component({
   selector: 'app-dashboardcomp',
   standalone: true,
-  imports: [NgxEchartsModule],
+  imports: [TableModule,NgxEchartsModule,CommonModule],
   templateUrl: './dashboardcomp.html',
   styleUrls: ['./dashboardcomp.scss'],
 })
@@ -148,4 +156,11 @@ export class DashboardcompComponent {
   setRating1(value: number) {
     this.rating.set(value);
   }
+ 
+orders: OrderItem[] = [
+    { trackingNo: '#876364', productName: 'Camera Lens', price: 178, totalOrder: 325, totalAmount: 14660 },
+    { trackingNo: '#876368', productName: 'Black Sleep Dress', price: 14, totalOrder: 53, totalAmount: 4660 },
+    { trackingNo: '#876412', productName: 'Argan Oil', price: 21, totalOrder: 78, totalAmount: 3467.6 },
+    { trackingNo: '#876621', productName: 'Eau De Parfum', price: 32, totalOrder: 98, totalAmount: 3469.81 }
+  ];
 }

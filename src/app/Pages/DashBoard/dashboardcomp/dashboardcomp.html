@@ -25,10 +25,33 @@
   </div>
 </div>
 <div class="row">
-  <div class="Recent col-5 mx-5">
-    <h3>Recent Orders</h3>
-  </div>
-  <div class="TOPselling col-4">
+<div class="Recent col-6 mx-5">
+  <h3>Recent Orders</h3>
+  <p-table [value]="orders" [tableStyle]="{'min-width': '50rem'}">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Tracking no</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Total Order</th>
+        <th>Total Amount</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td>{{ item.trackingNo }}</td>
+        <td>
+          <img [src]="item.icon" *ngIf="item.icon" alt="{{ item.productName }}" class="product-icon">
+          {{ item.productName }}
+        </td>
+        <td>${{ item.price }}</td>
+        <td><span class="total-order">{{ item.totalOrder }}</span></td>
+        <td class="total-amount">${{ item.totalAmount | number:'1.2-2' }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+  <div class="TOPselling col-3">
     <h3>Top Selling Products</h3>
     <div class="d-flex my-4">
       <div class="imgg" style="height: 104px">

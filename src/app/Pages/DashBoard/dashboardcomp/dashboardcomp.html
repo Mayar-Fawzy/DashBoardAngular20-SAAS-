@@ -1,17 +1,17 @@
 <h3>Dashboard</h3>
 <div class="cards-container">
   @for (item of navItems; track $index) {
-    <div class="sales-products d-flex align-items-center justify-content-center">
-      <div class="icons" [style.background-color]="item.color">
-        <div class="">
-          <i [class]="item.icon"></i>
-        </div>
-      </div>
-      <div class="card">
-        <span>{{item.count}}</span>
-        <p>{{ item.title }}</p>
+  <div class="sales-products d-flex align-items-center justify-content-center">
+    <div class="icons" [style.background-color]="item.color">
+      <div class="">
+        <i [class]="item.icon"></i>
       </div>
     </div>
+    <div class="card">
+      <span>{{ item.count }}</span>
+      <p>{{ item.title }}</p>
+    </div>
+  </div>
   }
 </div>
 <div class="charts-container">
@@ -20,16 +20,73 @@
     <div echarts [options]="lineChartOption" class="chart"></div>
   </div>
   <div class="chart-section">
-    <h3>Analytics</h3>
+    <h3 class="mx-5">Analytics</h3>
     <div echarts [options]="doughnutChartOption" class="chart"></div>
   </div>
 </div>
 <div class="row">
-<div class="Recent col-5 mx-5  ">
-  <h3>Recent Orders</h3>
+  <div class="Recent col-5 mx-5">
+    <h3>Recent Orders</h3>
+  </div>
+  <div class="TOPselling col-4">
+    <h3>Top Selling Products</h3>
+    <div class="d-flex">
+      <div class="imgg" style="height: 104px;">
+        <img src="/Images/Mask Group.png" alt="" />
+      </div>
+      <div class="Textss pt-2 mx-3">
+        <span
+          style="
+            font-family: Nunito;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 100%;
+            letter-spacing: 0%;
+          "
+        >
+          NIKE Shoes Black Pattern
+        </span>
+    <div class="stars my-0">
+  @for (star of stars; track star; let i = $index) {
+    <span class="star"
+          [class.inactive]="star > rating()"
+          (click)="setRating(star)">
+      &#9733;
+    </span>
+  }
+</div>
 
+        <p class="fw-bold">$87</p>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div  style="height: 104px;">
+        <img class="imggiphone" src="/Images/iphone 12.png" alt="" />
+      </div>
+      <div class="Textss pt-2 mx-3">
+        <span
+          style="
+            font-family: Nunito;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 100%;
+            letter-spacing: 0%;
+          "
+        >
+          iphone 12
+        </span>
+    <div class="stars my-0">
+  @for (star of stars1; track star; let i = $index) {
+    <span class="star"
+          [class.inactive]="star > rating1()"
+          (click)="setRating1(star)">
+      &#9733;
+    </span>
+  }
 </div>
-<div class="TOPselling col-4">
-  <h3>Top Selling Products</h3>
-</div>
+
+        <p class="fw-bold">$987</p>
+      </div>
+    </div>
+  </div>
 </div>

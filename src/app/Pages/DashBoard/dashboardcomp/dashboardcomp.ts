@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { EChartsOption } from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
 
@@ -138,4 +138,14 @@ export class DashboardcompComponent {
     },
     backgroundColor: 'transparent',
   };
+  stars = Array.from({ length: 5 }, (_, i) => i + 1); // [1,2,3,4,5]     // 5 نجوم
+  rating = signal(4);  
+  setRating(value: number) {
+    this.rating.set(value);
+  }
+   stars1 = Array.from({ length: 5 }, (_, i) => i + 1); // [1,2,3,4,5]     // 5 نجوم
+  rating1 = signal(4);  
+  setRating1(value: number) {
+    this.rating.set(value);
+  }
 }

@@ -1,8 +1,9 @@
 h3 {
-  color: #4A5568;
+  color: #030229;
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: 600;
+  padding: 5px;
 }
 
 .cards-container {
@@ -85,12 +86,34 @@ h3 {
    
     margin-left: 134px;
 }
-.Recent{
+// .Recent{
   
-}
+// }
 .TOPselling , .Recent{
  margin-top:20px;
  border-radius: 10px !important;
   height:335px !important;
   background-color: #FFFFFF !important;
 }
+ .stars {
+     cursor: pointer;
+      display: flex;
+    }
+    .star {
+      font-size: 25px;
+      color: #ffd055; /* لون النجمة المليانة */
+    }
+    .star.inactive {
+      color: #f0e0b0; /* لون النجمة الفاضية */
+    }
+    .imggiphone{
+      background-image: url("/Images/iphone11.png");
+
+         width: 97px;
+    padding: 7px;
+    height: 102px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      background-repeat: no-repeat;
+    }

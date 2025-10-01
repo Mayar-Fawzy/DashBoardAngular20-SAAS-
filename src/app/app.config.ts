@@ -12,12 +12,16 @@ import { NgxEchartsModule } from 'ngx-echarts';
 export const appConfig: ApplicationConfig = {
   providers: [
      provideAnimationsAsync(),
-        providePrimeNG({
-            theme: {
-                preset: Aura,
-                
-            }
-        }),
+       providePrimeNG({
+      theme: {
+        preset: Aura,
+        options: {
+          inputStyle: 'filled',
+          darkTheme: false,
+          darkModeSelector: false || 'none',
+        },
+      },
+    }),
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes), provideClientHydration(withEventReplay())
